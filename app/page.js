@@ -8,10 +8,12 @@ import Certificates from '../components/Certificates'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import FloatingElements from '../components/FloatingElements'
+import ScrollProgress from '../components/ScrollProgress'
 
 export default function Home() {
   return (
     <main className="relative">
+      <ScrollProgress />
       <FloatingElements />
       <Navigation />
       <Hero />
@@ -19,7 +21,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Experience />
-      <Certificates />
+      {/* <Certificates /> */}
       <Contact />
       <Footer />
     </main>

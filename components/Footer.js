@@ -1,9 +1,19 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import { Heart, ArrowUp } from 'lucide-react'
 
 export default function Footer() {
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -13,7 +23,22 @@ export default function Footer() {
   return (
     <footer className="relative py-12 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Back to Top Button */}
+        {/* Back to Top Button - Conditional Visibility */}
+        {showBackToTop && (
+          <motion.button
+            onClick={scrollToTop}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            whileHover={{ scale: 1.1, y: -2 }}
+            whileTap={{ scale: 0.9 }}
+            className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300 z-50"
+          >
+            <ArrowUp size={20} />
+          </motion.button>
+        )}
+
+        {/* Static Back to Top Button in Footer */}
         <motion.button
           onClick={scrollToTop}
           whileHover={{ scale: 1.1, y: -2 }}
@@ -45,7 +70,7 @@ export default function Footer() {
             className="text-center"
           >
             <div className="flex flex-wrap justify-center gap-6">
-              {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Certificates', 'Contact'].map((link) => (
+              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((link) => (
                 <motion.a
                   key={link}
                   href={`#${link.toLowerCase()}`}

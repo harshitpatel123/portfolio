@@ -47,22 +47,21 @@ export default function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-
-      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8 text-center lg:text-left"
           >
             {/* Greeting */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="flex items-center space-x-2 text-gray-400"
+              className="flex items-center justify-center lg:justify-start space-x-2 text-gray-400"
             >
               <motion.span
                 className="w-12 h-px bg-gradient-to-r from-primary-500 to-accent-500"
@@ -78,7 +77,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-5xl lg:text-7xl font-bold"
+              className="text-4xl sm:text-5xl lg:text-7xl font-bold"
             >
               <motion.span
                 className="gradient-text interactive"
@@ -102,7 +101,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="text-2xl lg:text-3xl text-gray-300 font-light"
+              className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light"
             >
               <span>{text}</span>
               <motion.span
@@ -119,7 +118,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="flex items-center space-x-2 text-gray-400"
+              className="flex items-center justify-center lg:justify-start space-x-2 text-gray-400"
             >
               <MapPin size={18} className="text-accent-500" />
               <span>Ahmedabad, India</span>
@@ -130,7 +129,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="text-lg text-gray-300 leading-relaxed max-w-lg"
+              className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
               I build scalable and reliable web applications with a focus on clean architecture,
               performance, and long-term maintainability. Comfortable working across frontend,
@@ -142,7 +141,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1 }}
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3"
             >
               {techStack.map((tech, index) => (
                 <motion.span
@@ -151,7 +150,7 @@ export default function Hero() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1.2 + index * 0.1 }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="px-4 py-2 glass rounded-full text-sm font-medium text-primary-400 border border-primary-500/30 interactive"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 glass rounded-full text-xs sm:text-sm font-medium text-primary-400 border border-primary-500/30 interactive"
                 >
                   {tech}
                 </motion.span>
@@ -163,7 +162,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4"
             >
               <motion.button
                 onClick={() => scrollToSection('projects')}
@@ -173,7 +172,7 @@ export default function Hero() {
                   y: -2
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full text-white font-medium flex items-center space-x-2 hover:shadow-lg transition-all duration-300"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full text-white font-medium flex items-center justify-center space-x-2 hover:shadow-lg transition-all duration-300 text-sm sm:text-base"
               >
                 <span>View Projects</span>
               </motion.button>
@@ -182,9 +181,9 @@ export default function Hero() {
                 onClick={downloadResume}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 glass rounded-full text-white font-medium flex items-center space-x-2 hover:bg-white/10 transition-all duration-300 border border-primary-500/30"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 glass rounded-full text-white font-medium flex items-center justify-center space-x-2 hover:bg-white/10 transition-all duration-300 border border-primary-500/30 text-sm sm:text-base"
               >
-                <Download size={18} />
+                <Download size={16} className="sm:w-[18px] sm:h-[18px]" />
                 <span>Download Resume</span>
               </motion.button>
             </motion.div>
@@ -194,7 +193,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.6 }}
-              className="flex space-x-6"
+              className="flex justify-center lg:justify-start space-x-4 sm:space-x-6"
             >
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -207,20 +206,20 @@ export default function Hero() {
                   transition={{ delay: 1.7 + index * 0.1 }}
                   whileHover={{ scale: 1.2, y: -5, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 glass rounded-full hover:bg-white/10 transition-all duration-300 group border border-primary-500/20"
+                  className="p-2.5 sm:p-3 glass rounded-full hover:bg-white/10 transition-all duration-300 group border border-primary-500/20"
                 >
-                  <social.icon size={20} className="text-gray-400 group-hover:text-primary-400 transition-colors" />
+                  <social.icon size={18} className="sm:w-5 sm:h-5 text-gray-400 group-hover:text-primary-400 transition-colors" />
                 </motion.a>
               ))}
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Simple & Clean */}
+          {/* Right Content - Hidden on mobile, visible on lg+ */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative flex justify-center lg:justify-end"
+            className="hidden lg:flex relative justify-center lg:justify-end"
           >
             <div className="relative w-80 h-80 lg:w-96 lg:h-96">
               {/* Simple geometric shapes */}

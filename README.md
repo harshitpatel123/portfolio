@@ -1,6 +1,6 @@
 # Harshit Patel - Portfolio
 
-A stunning, modern portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+A stunning, modern portfolio website built with Next.js, Javascript, Tailwind CSS, and Framer Motion.
 
 ## Features
 
@@ -14,7 +14,7 @@ A stunning, modern portfolio website built with Next.js, TypeScript, Tailwind CS
 ## Tech Stack
 
 - **Framework**: Next.js 14
-- **Language**: TypeScript
+- **Language**: Javascript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
@@ -37,7 +37,7 @@ A stunning, modern portfolio website built with Next.js, TypeScript, Tailwind CS
 ## Customization
 
 ### Personal Information
-Update the following in `components/Hero.tsx`:
+Update the following in `components/Hero.js`:
 - Name and title
 - Location
 - Description
@@ -51,12 +51,13 @@ Modify `tailwind.config.js` to customize:
 - Custom utilities
 
 ### Content Sections
-The portfolio is structured for easy expansion:
-- Hero section (completed)
-- About section (to be added)
-- Skills section (to be added)
-- Projects section (to be added)
-- Contact section (to be added)
+The portfolio includes:
+- Hero section ✅
+- About section ✅
+- Skills section ✅
+- Experience section ✅
+- Projects section ✅
+- Contact section ✅
 
 ## Build for Production
 
